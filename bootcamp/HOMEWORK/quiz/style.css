@@ -1,0 +1,38 @@
+body {
+    background-color: aqua;
+justify-content: center;
+align-items: center;
+
+
+
+}
+
+header {
+
+    display: flex;
+    justify-content: space-between;
+    text-decoration: row;
+    align-items: center;
+    font-style: italic;
+    font-size: large;
+   
+}
+
+.quiz-container{
+
+    background-color: blueviolet ;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 500px;
+    height: 200px;
+    margin: 250px;
+    margin-left: 375px;
+   
+}
+
+h4{
+
+    margin-left: 44px;
+    font-size: x-large;
+
+
+}
