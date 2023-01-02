@@ -10,35 +10,139 @@
 
 <body>
 
+    <!--adding score tracker and timer in the header-->
     <header>
-        <h2 class="high>scores" id="highscores">View Highscores</h2>
-        <h3 class="timer" id="countdown">Countdown</h3>
-    </div>
+        <h2 class="highscores" id="highscores">View Highscores</h2>
+        <h2 class="timer" id="countdown">60</h2>
     </header>
 
+    <!--creating a container for first questions block-->s
     <div class="quiz-container" id="quiz">
-            <h4 id="title">Title</h2>
-
-
+        <div class="quiz header">
+            <h2 class="title"> Commonly used data types DO NOT include: </h2>
             <ul>
+                <li>
+                    <input type="radio" name="answer1"> Strings<br>
 
-                <input type="radio" name="answer" id="a">
-                <label for="a">answer1</label> <br>
-                <input type="radio" id="b" name="answer">
-                <label for="b">answer2</label> <br>
-                <input type="radio" id="c" name="answer">
-                <label for="c">answer3</label> <br>
-                <input type="radio" id="d" name="answer">
-                <label for="d">answer4</label> <br>
+                </li>
+                <li>
+                    <input type="radio" name="answer1">Booleans<br>
 
-                <button class="Submitbtn" id="Submit">Submit</button>
+                </li>
+                <li>
+                    <input type="radio" name="answer1" id="Correct1">Alerts<br>
+
+                </li>
+                <li>
+                    <input type="radio" name="answer1">Numbers<br>
+
+                </li>
+
             </ul>
-
-           
-
         </div>
     </div>
 
+    <!--creating 4 other conntainers by copy and paste-->
+            <div class="quiz-container" id="quiz">
+            <div class="quiz header">
+            <h2 class="title"> The condition in an if / else statement is enclosed within ____ </h2>
+            <ul>
+                <li>
+                    <input type="radio" name="answer2"> Quotes<br>
+
+                </li>
+                <li>
+                    <input type="radio" name="answer2">Curly brackets<br>
+
+                </li>
+                <li>
+                    <input type="radio" name="answer2" id="Correct2">Parentheses<br>
+
+                </li>
+                <li>
+                    <input type="radio" name="answer2">Square Brackets<br>
+
+                </li>
+
+            </ul>
+            </div>
+            </div>
+
+            <div class="quiz-container" id="quiz">
+            <div class="quiz header">
+            <h2 class="title"> Arrays in JavaScript can be used to store ____ </h2>
+            <ul>
+                <li>
+                    <input type="radio" name="answer3"> Numbers and Strings<br>
+
+                </li>
+                <li>
+                    <input type="radio" name="answer3">Other arrays<br>
+
+                </li>
+                <li>
+                    <input type="radio" name="answer3" >Booleans<br>
+
+                </li>
+                <li>
+                    <input type="radio" name="answer3" id="Correct3">All of the above<br>
+
+                </li>
+
+            </ul>
+            </div>
+            </div>
+            <div class="quiz-container" id="quiz">
+            <div class="quiz header">
+            <h2 class="title"> String values must be enclosed within ____ when being assigned to variables. </h2>
+            <ul>
+                <li>
+                    <input type="radio" name="answer4"> Commas<br>
+
+                </li>
+                <li>
+                    <input type="radio" name="answer4">Curly brackets<br>
+
+                </li>
+                <li>
+                    <input type="radio" name="answer4" id="Correct4">Quotes<br>
+
+                </li>
+                <li>
+                    <input type="radio" name="answer4">Parentheses<br>
+
+                </li>
+
+            </ul>
+            </div>
+            </div>
+            
+            <div class="quiz-container" id="quiz">
+            <div class="quiz header">
+            <h2 class="title"> A very useful tool used during development and debugging for printing content to the debugger is:</h2>
+            <ul>
+                <li>
+                    <input type="radio" name="answer5"> JavaScript<br>
+
+                </li>
+                <li>
+                    <input type="radio" name="answer5">Terminal/bash<br>
+
+                </li>
+                <li>
+                    <input type="radio" name="answer5">For loops<br>
+
+                </li>
+                <li>
+                    <input type="radio" name="answer5" id="Correct5">Console log<br>
+
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+<script src="script.js"></script>
 
 </body>
 

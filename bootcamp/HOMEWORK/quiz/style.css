@@ -1,7 +1,7 @@
 body {
     background-color: aqua;
-justify-content: center;
-align-items: center;
+    justify-content: center;
+    align-items: center;
 
 
 
@@ -15,24 +15,53 @@ header {
     align-items: center;
     font-style: italic;
     font-size: large;
-   
+
 }
 
-.quiz-container{
+h2{
+    font-size: x large;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 
-    background-color: blueviolet ;
+
+}
+.quiz-container {
+    border: solid black;
+    display: block;
+    background-color: violet;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     width: 500px;
-    height: 200px;
+    height: 308px;
     margin: 250px;
     margin-left: 375px;
-   
+
 }
 
-h4{
+.title {
 
-    margin-left: 44px;
+    margin-left: 24px;
     font-size: x-large;
+}
+
+ul {
+
+    list-style-type: none;
+    padding: 13px;
+
+}
+
+ul li {
+    margin: 0.5rem;
+    font-size: 20px;
+
+}
+
+button {
+    background-color: aqua;
+    color: black;
+    display: block;
+    width: 500px;
+    font-size: 28px;
+
 
 
 }

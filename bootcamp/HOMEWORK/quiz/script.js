@@ -1,6 +1,14 @@
+// all variables im gonna be using
+
+var countdown=document.getElementsById("countdown");
+var highscores=document.getElementsById("highscores");
+var penaltyTime=10;
+var score=0;
+var startingSec=60;
+
+
+
 // list of all questions, choices, and answers
-
-
 var questions = [
   {
     title: 'Commonly used data types DO NOT include:',
@@ -35,3 +43,7 @@ var questions = [
     answer: 'console.log',
   },
 ];
+
+//displaying first block of questions
+document.getElementsByClassName("quiz-container").style.display="block"
+
