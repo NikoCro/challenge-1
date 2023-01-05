@@ -31,7 +31,7 @@ h2{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     width: 500px;
     height: 308px;
-    margin: 250px;
+    margin: none;
     margin-left: 375px;
 
 }
@@ -64,4 +64,21 @@ button {
 
 
 
+}
+
+#startbtn{
+
+    background-color: coral;
+    color: black;
+    display: block;
+    width: 250px;
+    font-size: 30px;
+    margin-top: 300px;
+    margin-left: 470px;
+    align-items: center;
+    
+}
+
+.hide{
+    display: none;
 }
