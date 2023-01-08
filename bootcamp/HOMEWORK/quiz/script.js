@@ -1,23 +1,23 @@
 // all variables im gonna be using
 
-const penaltyTime = 10;
 let score = 0;
-// let startingSec=60;
+let time = 60;
+let index = 0;
+let selectedAnswer;
 
+const introEl = document.getElementById("intro");
+const radioButtons = document.querySelectorAll('input[name="choices"]');
+const soundCrt = new Audio("./correct.wav");
+const soundIncrt = new Audio("./incorrect.wav");
 const startBtn = document.getElementById("startbtn");
 const countdown = document.getElementById("countdown");
-const highscores = document.getElementById("highscores");
+const scores = document.getElementById("scores");
 const quiz = document.getElementById("quiz");
-const correctAnswer = document.getElementById("");
-
+const submitbtn = document.getElementById("submitbtn");
 let question = document.getElementById("title");
-let answer1 = document.getElementById("answer1");
-let answer2 = document.getElementById("answer2");
-let answer3 = document.getElementById("answer3");
-let answer4 = document.getElementById("answer4");
-let time = 60;
-let timerId;
-let index = 0;
+let answers = document.getElementById("choices");
+const resultsForm=document.getElementById("results")
+
 // list of all questions, choices, and answers
 var questions = [
   {
@@ -57,33 +57,114 @@ var questions = [
 //making first function that will take all the questions in the question array
 function displayQuestion() {
   question.textContent = questions[index].title;
-  //   question.innerHTML = questions[number].title
-  //   answer1.innerHTML = questions[number].choices[0]
-  //   answer2.innerHTML = questions[number].choices[1]
-  //   answer3.innerHTML = questions[number].choices[2]
-  //   answer4.innerHTML = questions[number].choices[3]
+  answer1.textContent = questions[index].choices[0];
+  answer2.textContent = questions[index].choices[1];
+  answer3.textContent = questions[index].choices[2];
+  answer4.textContent = questions[index].choices[3];
 }
-
-var introEl = document.getElementById("intro");
 
 //function for start button
 function startQuiz() {
-  introEl.setAttribute("class", "hide");
-  quiz.removeAttribute("class");
-  timerId = setInterval(clock, 1000);
-  countdown.textContent = time;
-  displayQuestion();
+  // starts the quiz
+  introEl.setAttribute("class", "hide"); // gives intro element a class of hide
+  quiz.classList.remove("hide"); // removes hide class from quiz element
+  scores.textContent = score; // setting the score on the scores element text content
+  let startClock=setInterval(clock, 1000) // variable of setInterval 
+  countdown.textContent = time; // setting the time on the countdown element text content
+  displayQuestion();// runs displayQuestion function
 }
 
+startBtn.addEventListener("click", startQuiz);
+
+
+let savebtn=document.getElementById("savebtn")
+//if values are valid
+
+function submitResults(){
+
+let playerName= document.getElementById("playerName").value.trim();
+let email=document.getElementById("email").value.trim();
+let finalScore= document.getElementById("score").value.trim();
+
+if (!playerName || !email || !score){
+  return;
+}
+// save them in local storage
+let resultsObj= {
+  playerName,
+  email,
+  finalScore,
+}
+
+localStorage.setItem("resultsObj", JSON.stringify(resultsObj))
+window.location.reload()
+}
+
+savebtn.addEventListener("click",submitResults)
+
+function endQuiz() {
+  quiz.setAttribute("class", "hide");
+  introEl.classList.remove("hide");
+  scores.textContent = score;
+  introEl.textContent = `Game over, your score is: ${score}`;
+  resultsForm.classList.remove("hide")
+
+}
+
+//function to start the countdown
 function clock() {
   time--;
   countdown.textContent = time;
   if (time <= 0) {
-    // endGame()
-    console.log("Game over");
+    clearInterval(startClock)
+    countdown.textContent="Game Over"
+    endQuiz();
   }
 }
 
-startBtn.addEventListener("click", startQuiz());
+submitbtn.addEventListener("click", () => {
+  for (const button of radioButtons) {
+    if (button.checked === true) { 
+      // if the radio button is checked
+      selectedAnswer = button.id; // assign selectedAnswer to radio button's id
+      if (
+        questions[index].answer === questions[index].choices[selectedAnswer]
+      ) {
+        // this happens when the question is right
+        soundCrt.play(); // plays correct answer sound
+        index++;// increases index
+        if (index<5){
+           // displays next question if index is less than 5
+          // because there are only 5 questions, max index is 4
+        displayQuestion();
+    }
+        button.checked = false; //unchecking the button by setting the button to false
+        score++; // increase the score by 1
+        scores.textContent = score; // getting h2 element with id of scores and changing text content to score
+        if (index >= 5) {
+          // if index is greater than or equal to 5 it will run
+          endQuiz(); // a function to end the en the quiz
+        }
+      } else {
+        // this happens when the question is wrong
+        soundIncrt.play(); // plays incrrect answer sound
+        time--; // subtract 1 from time
+        index++;// increases index
+        if (index<5){
+          // displays next question if index is less than 5
+         // because there are only 5 questions, max index is 4
+       displayQuestion();
+   }
+   button.checked = false; //unchecking the button by setting the button to false
+   if (index >= 5) {
+    // if index is greater than or equal to 5 it will run
+    endQuiz(); // a function to end the en the quiz
+  }
+      }
+      return;
+    }
 
-// diplaying blocks of questions one by one
+  }
+});
+// get values from the form input
+

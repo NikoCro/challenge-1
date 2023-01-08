@@ -18,6 +18,16 @@ header {
 
 }
 
+p{
+
+  
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+
+    
+}
+
 h2{
     font-size: x large;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -79,6 +89,29 @@ button {
     
 }
 
+.card{
+
+    background-color: coral;
+    display: block;
+    margin: 60px auto;
+    width: 500px;
+    height: 350px;
+    font-size: 28px;
+}
+
 .hide{
     display: none;
 }
+
+#savebtn{
+
+
+    background-color: aqua;
+    color: black;
+    display: block;
+    width: 500px;
+    font-size: 28px;
+    margin-top: 25px;
+
+}
+
